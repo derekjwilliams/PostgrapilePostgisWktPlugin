@@ -1,0 +1,25 @@
+{
+  "name": "simple_node_project",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "GRAPHILE_ENV=development NODE_OPTIONS='--loader ts-node/esm' node --no-warnings=ExperimentalWarning  src/server.ts",
+    "lint": "eslint ./src/plugins/PgPostgisWktPlugin.ts --fix"
+  },
+  "dependencies": {
+    "graphql-type-json": "^0.3.2",
+    "postgraphile": "^5.0.0-beta.40"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.11.24",
+    "eslint": "^9.20.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.1"
+  }
+}
