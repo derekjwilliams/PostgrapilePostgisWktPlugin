@@ -1,3 +1,4 @@
+import 'postgraphile'
 import type { PgCodec } from '@dataplan/pg'
 import { gatherConfig } from 'graphile-build'
 import { EXPORTABLE } from 'graphile-build'

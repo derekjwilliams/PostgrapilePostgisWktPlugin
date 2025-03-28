@@ -49,14 +49,16 @@ PostgraphilePostgisWktPlugin/
 
 ### package.json example
 
-// package.json
+
+
+```json
 {
-"name": "postgraphile-postgis-wkt", // Choose a unique name (e.g., @your-npm-username/postgraphile-postgis-wkt)
-"version": "0.1.0", // Start with an initial version (follow Semantic Versioning)
-"description": "A PostGraphile v5 plugin to handle PostGIS geometry/geography types as WKT strings.",
-"author": "Your Name <your.email@example.com> (https://yourwebsite.com)", // Your details
-"license": "MIT", // Or your chosen license (e.g., "Apache-2.0")
-"type": "module", // VERY IMPORTANT: Specifies that your package uses ES Modules
+  "name": "postgraphile-postgis-wkt",
+  "version": "0.1.0", // Start with an initial version (follow Semantic Versioning)
+  "description": "A PostGraphile v5 plugin to handle PostGIS geometry/geography types as WKT strings.",
+  "author": "Derek Williams <derek61@gmail.com>",
+  "license": "MIT",
+  "type": "module", // VERY IMPORTANT: Specifies that your package uses ES Modules
 "exports": {
 // Defines the entry points for consumers (ESM standard)
 ".": {
@@ -111,8 +113,8 @@ PostgraphilePostgisWktPlugin/
 "url": "https://github.com/your-username/your-repo-name/issues" // Link to issue tracker
 }
 }
-
 ```
+
 4. Write README.md:
 
 Explain what the plugin does (handles PostGIS types as WKT).
