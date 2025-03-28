@@ -2,10 +2,26 @@
   "name": "postgraphile-postgis-wkt",
   "version": "0.1.0",
   "type": "module",
-  "scripts": {
-    "build": "tsc"
+    "exports": {
+    ".": {
+      "import": "./dist/PgPostgisWktPlugin.js",
+      "types": "./dist/PgPostgisWktPlugin.d.ts"
+    }
   },
-"dependencies": {
+  "types": "./dist/PgPostgisWktPlugin.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build" 
+  },
+  "peerDependencies": {
+    "postgraphile": "^5.0.0-beta.40"
+  },
+  "dependencies": {
     "@graphile-contrib/pg-many-to-many": "^2.0.0-beta.6",
     "@graphile/simplify-inflection": "^8.0.0-beta.6",
     "dotenv": "^16.4.7",
@@ -22,5 +38,21 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.24.1"
+  },
+  "keywords": [
+    "postgraphile",
+    "graphile",
+    "plugin",
+    "postgis",
+    "gis",
+    "geometry",
+    "geography",
+    "wkt",
+    "crystal",
+    "v5"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/PostgrapilePostgisWktPlugin.git"
   }
 }

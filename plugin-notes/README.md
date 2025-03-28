@@ -59,22 +59,21 @@ PostgraphilePostgisWktPlugin/
   "author": "Derek Williams <derek61@gmail.com>",
   "license": "MIT",
   "type": "module", // VERY IMPORTANT: Specifies that your package uses ES Modules
-"exports": {
-// Defines the entry points for consumers (ESM standard)
-".": {
-// When someone imports 'postgraphile-postgis-wkt'
-"import": "./dist/PgPostgisWktPlugin.js", // Path to the compiled ESM JavaScript file
-"types": "./dist/PgPostgisWktPlugin.d.ts" // Path to the corresponding type definition
-}
-},
+  "exports": {// Defines the entry points for consumers (ESM standard)
+    ".": {
+    // When someone imports 'postgraphile-postgis-wkt'
+    "import": "./dist/PgPostgisWktPlugin.js", // Path to the compiled ESM JavaScript file
+    "types": "./dist/PgPostgisWktPlugin.d.ts" // Path to the corresponding type definition
+    }
+  },
 // Fallback for older tools (often redundant with 'exports' but good practice)
-"types": "./dist/PgPostgisWktPlugin.d.ts",
-"files": [
-// VERY IMPORTANT: List files/folders to INCLUDE when publishing
-"dist", // Include the entire compiled output directory
-"LICENSE",
-"README.md"
-],
+  "types": "./dist/PgPostgisWktPlugin.d.ts",
+  "files": [
+  // VERY IMPORTANT: List files/folders to INCLUDE when publishing
+    "dist", // Include the entire compiled output directory
+    "LICENSE",
+    "README.md"
+  ],
 "scripts": {
 "build": "tsc", // Command to compile TypeScript using tsconfig.json
 "prepublishOnly": "npm run build" // Automatically run build before publishing

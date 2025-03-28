@@ -30,8 +30,6 @@ interface State {
   geographyArrayCodec: PgCodec
 }
 
-// Cache isn't strictly needed for this simple case yet
-
 // Allow enabling the plugin via preset config
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
