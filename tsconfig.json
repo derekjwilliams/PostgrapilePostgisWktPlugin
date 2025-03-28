@@ -1,17 +1,17 @@
 // tsconfig.json
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "outDir": "./dist",  // This should already be correct
+    "rootDir": "./src",  // Ensure compiled files match expected structure
+    "declaration": true,
+    "declarationMap": true,
     "module": "NodeNext",
-    "outDir": "./dist",
-    // Changed rootDir to encompass both src and plugins
-    "rootDir": ".",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "NodeNext",
-    "resolveJsonModule": true,
-    "baseUrl": "." // Base directory for path resolution remains useful
+    "resolveJsonModule": true
   },
   // Added include to explicitly specify source directories
   "include": [

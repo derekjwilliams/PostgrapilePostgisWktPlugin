@@ -1,14 +1,14 @@
 {
   "name": "postgraphile-postgis-wkt",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "type": "module",
-    "exports": {
+  "exports": {
     ".": {
       "import": "./dist/PgPostgisWktPlugin.js",
       "types": "./dist/PgPostgisWktPlugin.d.ts"
-    }
+    },
+    "./package.json": "./package.json"
   },
-  "types": "./dist/PgPostgisWktPlugin.d.ts",
   "files": [
     "dist",
     "LICENSE",
@@ -26,8 +26,7 @@
     "@graphile/simplify-inflection": "^8.0.0-beta.6",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "graphql-type-json": "^0.3.2",
-    "postgraphile": "^5.0.0-beta.40"
+    "graphql-type-json": "^0.3.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.20.0",
@@ -37,7 +36,8 @@
     "eslint": "^9.20.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.24.1"
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/parser": "^8.24.1"
   },
   "keywords": [
     "postgraphile",
