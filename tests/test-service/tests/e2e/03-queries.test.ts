@@ -2,38 +2,38 @@
 import { LocalDatabase } from '../utils/local-db.js';
 // import { GeometryVerifier } from '../test-service/src/db-client';
 import { GraphQLClient } from '../utils/graphql-client.js';
-import { afterAll, beforeAll, describe, expect, it } from '@jest/globals';
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 //const TEST_DB_URL = process.env.TEST_DB_URL || 'postgres://postgres:postgres@localhost:5432/wkt_postgraphile_test';
 const TEST_DB_URL = 'postgres://postgres:postgres@localhost:5432/wkt_postgraphile_test'
 const GRAPHQL_ENDPOINT = 'http://localhost:5050/graphql';
 
 describe('Query Operations', () => {
-  let db: LocalDatabase;
-  let gqlClient: GraphQLClient;
+  // let db: LocalDatabase;
+  // let gqlClient: GraphQLClient;
   // let verifier: GeometryVerifier;
 
   beforeAll(async () => {
     // Initialize local database
-    db = new LocalDatabase(TEST_DB_URL);
-    await db.connect();
-    await db.runMigrations();
+    // db = new LocalDatabase(TEST_DB_URL);
+    // await db.connect();
+    // await db.runMigrations();
     
     // Setup GraphQL client and verifier
-    gqlClient = new GraphQLClient(GRAPHQL_ENDPOINT);
+    // gqlClient = new GraphQLClient(GRAPHQL_ENDPOINT);
     // verifier = new GeometryVerifier(TEST_DB_URL);
     
     // Insert test data
-    await gqlClient.mutate(`
-      mutation CreateTestData {
-        point: createGeometry(wkt: "POINT(-71.064544 42.28787)") { id }
-        polygon: createGeometry(wkt: "POLYGON((0 0, 4 0, 4 4, 0 4, 0 0))") { id }
-      }
-    `);
+    // await gqlClient.mutate(`
+    //   mutation CreateTestData {
+    //     point: createGeometry(wkt: "POINT(-71.064544 42.28787)") { id }
+    //     polygon: createGeometry(wkt: "POLYGON((0 0, 4 0, 4 4, 0 4, 0 0))") { id }
+    //   }
+    // `);
   }, 120_000);
 
   afterAll(async () => {
-    await db.disconnect();
+    // await db.disconnect();
   });
 
   // it('should retrieve point geometry via GraphQL', async () => {

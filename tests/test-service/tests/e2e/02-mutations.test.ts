@@ -1,8 +1,8 @@
 // tests/e2e/02-mutations.test.ts
 import { GraphQLClient } from '../utils/graphql-client.js';
-import { afterAll, beforeAll, describe, expect, it } from '@jest/globals';
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
-const GRAPHQL_ENDPOINT = 'http://localhost:54321/graphql';
+const GRAPHQL_ENDPOINT = 'http://localhost:5050/graphql';
 const TEST_DB_URL = process.env.TEST_DB_URL || 'postgres://postgres:postgres@localhost/wkt_postgraphile_test';
 
 describe.only('Mutation Tests', () => {

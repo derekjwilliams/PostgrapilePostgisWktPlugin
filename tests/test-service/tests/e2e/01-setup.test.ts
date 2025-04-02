@@ -1,4 +1,4 @@
-import { afterAll, beforeAll, describe, expect, it } from "@jest/globals";
+import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { LocalDatabase } from "../utils/local-db.js";
 // import { sql } from "drizzle-orm"
 
