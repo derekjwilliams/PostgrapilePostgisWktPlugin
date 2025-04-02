@@ -1,10 +1,11 @@
 // verify queries work
-import { LocalDatabase } from '../utils/local-db';
+import { LocalDatabase } from '../../../utils/local-db.js';
 import { GeometryVerifier } from '../test-service/src/db-client';
-import { GraphQLClient } from '../utils/graphql-client';
+import { GraphQLClient } from '../../../utils/graphql-client.js';
 import { afterAll, beforeAll, describe, expect, it } from '@jest/globals';
 
-const TEST_DB_URL = process.env.TEST_DB_URL || 'postgres://postgres:postgres@localhost:5432/wkt_postgraphile_test';
+//const TEST_DB_URL = process.env.TEST_DB_URL || 'postgres://postgres:postgres@localhost:5432/wkt_postgraphile_test';
+const TEST_DB_URL = 'postgres://postgres:postgres@localhost:5432/wkt_postgraphile_test'
 const GRAPHQL_ENDPOINT = 'http://localhost:5050/graphql';
 
 describe('Query Operations', () => {

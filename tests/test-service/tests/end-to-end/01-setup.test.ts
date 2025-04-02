@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, describe, expect, it } from "@jest/globals";
-import { LocalDatabase } from "../utils/local-db";
+import { LocalDatabase } from "../utils/local-db.js";
 import { sql } from "drizzle-orm";
 
 describe('Database Setup', () => {

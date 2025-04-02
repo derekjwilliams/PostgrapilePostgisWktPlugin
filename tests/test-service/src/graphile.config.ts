@@ -1,9 +1,10 @@
+//src/graphile.config.ts
 import 'graphile-config'
 import 'postgraphile'
 import { PostGraphileAmberPreset } from 'postgraphile/presets/amber'
 import { makePgService } from 'postgraphile/adaptors/pg'
-
-import { PgPostgisWktPlugin } from '../../../src/PgPostgisWktPlugin' //TODO this is a bit awkward, there are likely better approaches
+import { PgPostgisWktPlugin } from 'postgraphile-postgis-wkt'
+// import { PgPostgisWktPlugin } from '../../../src/PgPostgisWktPlugin' //TODO this is a bit awkward, there are likely better approaches
 
 const preset: GraphileConfig.Preset = {
   extends: [

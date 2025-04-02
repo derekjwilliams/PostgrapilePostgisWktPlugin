@@ -1,0 +1,25 @@
+// {
+//   "compilerOptions": {
+//     "module": "NodeNext",  // Must match moduleResolution
+//     "moduleResolution": "NodeNext",
+//     "target": "ES2022",
+//     "outDir": "./dist",
+//     "rootDir": "./src",
+//     "strict": true,
+//     "esModuleInterop": true,
+//     "skipLibCheck": true,
+//     "types": ["node"],
+//     "sourceMap": true,
+//     "declaration": true
+//   },
+//   "include": ["src/**/*"],
+//   "exclude": ["node_modules"]
+// }
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "target": "ES2022"
+  }
+}

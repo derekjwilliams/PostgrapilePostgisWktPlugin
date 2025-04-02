@@ -1,4 +1,4 @@
-//pgl.ts
+//src/pgl.ts
 import preset from './graphile.config.js'
 import { postgraphile } from 'postgraphile'
 
