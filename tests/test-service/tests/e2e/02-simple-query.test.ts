@@ -1,4 +1,4 @@
-// tests/e2e/plugin.test.ts
+// tests/e2e/02-simple-query.test.ts
 import { describe, it, expect } from 'vitest';
 import { Query } from '../../src/generated/graphql'; // Import the Query type
 
