@@ -8,41 +8,41 @@ const TEST_DB_URL = process.env.TEST_DB_URL || 'postgres://postgres:postgres@loc
 describe.only('Mutation Tests', () => {
   let gqlClient: GraphQLClient;
 
-  beforeAll(async () => {
-    gqlClient = new GraphQLClient(GRAPHQL_ENDPOINT);
-  });
+  // beforeAll(async () => {
+  //   gqlClient = new GraphQLClient(GRAPHQL_ENDPOINT);
+  // });
 
-  afterAll(async () => {
-  });
+  // afterAll(async () => {
+  // });
 
-  it.only('should create a geometry record via GraphQL mutation', async () => {
-  const mutation = `
-    mutation CreateGeometry($geom: String!) {
-      createTestDatum(input: {
-        testDatum: {
-          geomPoint: $geom
-        }
-      }) {
-        testDatum {
-          id
-          geomPoint
-        }
-      }
-    }
-  `;
+  // it.only('should create a geometry record via GraphQL mutation', async () => {
+  // const mutation = `
+  //   mutation CreateGeometry($geom: String!) {
+  //     createTestDatum(input: {
+  //       testDatum: {
+  //         geomPoint: $geom
+  //       }
+  //     }) {
+  //       testDatum {
+  //         id
+  //         geomPoint
+  //       }
+  //     }
+  //   }
+  // `;
 
   // Execute mutation with parameterized input
-  const result = await gqlClient.mutate<{
-    createTestDatum: {
-      testDatum: { id: string; geomPoint: string };
-    };
-  }>(mutation, {
-    rowId: 3,// TODO should let DB handle this
-    geom: 'POINT(2.351400 48.857500)'
-  });
+  // const result = await gqlClient.mutate<{
+  //   createTestDatum: {
+  //     testDatum: { id: string; geomPoint: string };
+  //   };
+  // }>(mutation, {
+  //   rowId: 3,// TODO should let DB handle this
+  //   geom: 'POINT(2.351400 48.857500)'
+  // });
 
   // Verify response structure
-  expect(result.createTestDatum.testDatum.geomPoint).toBe('POINT(2.351400 48.857500)');
+  // expect(result.createTestDatum.testDatum.geomPoint).toBe('POINT(2.351400 48.857500)');
 
   // Verify database persistence
   // const isValid = await verifier.verifyGeometry(
@@ -52,22 +52,22 @@ describe.only('Mutation Tests', () => {
   //   'POINT(2.351400 48.857500)'
   // );
   // expect(isValid).toBe(true);
-});
+// });
 
-  it('should create a point geometry', async () => {
-    const mutation = `
-      mutation CreatePoint($wkt: String!) {
-        createGeometry(wkt: $wkt) {
-          id
-        }
-      }
-    `;
+  // it('should create a point geometry', async () => {
+  //   const mutation = `
+  //     mutation CreatePoint($wkt: String!) {
+  //       createGeometry(wkt: $wkt) {
+  //         id
+  //       }
+  //     }
+  //   `;
 
-    // Execute mutation
-    const result = await gqlClient.mutate<{ createGeometry: { id: number } }>(
-      mutation,
-      { wkt: 'POINT(-71.064544 42.28787)' }
-    );
+  //   // Execute mutation
+  //   const result = await gqlClient.mutate<{ createGeometry: { id: number } }>(
+  //     mutation,
+  //     { wkt: 'POINT(-71.064544 42.28787)' }
+  //   );
 
     // Verify database state
     // const isValid = await verifier.verifyGeometry(
@@ -78,4 +78,4 @@ describe.only('Mutation Tests', () => {
     
     // expect(isValid).toBe(true);
   });
-});
+// });

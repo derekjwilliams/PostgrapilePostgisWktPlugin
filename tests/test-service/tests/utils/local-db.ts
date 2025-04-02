@@ -1,15 +1,15 @@
 // tests/utils/local-db.ts
 import { Client } from 'pg';
-import { drizzle } from 'drizzle-orm/node-postgres';
-import * as schema from '../test-service/src/schema';
+//import { drizzle } from 'drizzle-orm/node-postgres';
+// import * as schema from '../../../test-service/src/schema.js';
 
 export class LocalDatabase {
   private client: Client;
-  public drizzle: ReturnType<typeof drizzle>;
+  // public drizzle: ReturnType<typeof drizzle>;
 
   constructor(connectionString: string) {
-    this.client = new Client({ connectionString });
-    this.drizzle = drizzle(this.client, { schema });
+    // this.client = new Client({ connectionString });
+    // this.drizzle = drizzle(this.client, { schema });
   }
 
   async connect() {

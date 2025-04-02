@@ -3,40 +3,41 @@
   "version": "0.1.3",
   "type": "module",
   "scripts": {
-    "preinstall": "npm link postgraphile-postgis-wkt || echo 'Linked package not available - install manually if developing locally'",
-    "postinstall": "npm run build",
-    "link-package": "npm link ../path/to/postgraphile-postgis-wkt",
+    "preinstall": "npm link postgraphile-postgis-wkt 2>/dev/null || { echo 'Warning: Linked package not available - run \"npm run link-package\" if developing locally'; exit 0; }",
+    "link-package": "npm link ../../",
     "unlink-package": "npm unlink postgraphile-postgis-wkt",
-    "oldbuild": "tsc",
-
     "pretest:e2e": "npm run start:test-server",
     "test:e2e": "vitest run -r tests/e2e",
     "posttest:e2e": "npm run stop:test-server",
-    "start:test-server": "tsx src/server.ts & echo $! > .test-server.pid",
+    "start:test-server": "GRAPHILE_ENV=development tsx src/server.ts & echo $! > .test-server.pid",
     "stop:test-server": "kill $(cat .test-server.pid) && rm .test-server.pid",
     "test:e2e:ci": "concurrently -k -s first -n 'SERVER,TESTS' -c 'bgBlue.bold,bgGreen.bold' \"npm run start:test-server\" \"wait-on tcp:3000 && npm run test:e2e\"",
-
     "test": "vitest run",
     "test:watch": "vitest watch",
     "test:ui": "vitest --ui",
     "start": "tsx src/server.ts",
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "generate-types": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
-    "drizzle-orm": "^0.41.0",
     "express": "^4.21.2",
     "graphql-type-json": "^0.3.2",
     "pg": "^8.14.1",
     "postgis": "^1.0.5",
-    "postgraphile": "^5.0.0-beta.40"
+    "postgraphile": "^5.0.0-beta.40",
+    "vitest": "^3.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.20.0",
+    "@graphql-codegen/cli": "^5.0.5",
+    "@graphql-codegen/typescript": "^4.1.6",
+    "@graphql-codegen/typescript-operations": "^4.6.0",
     "@tsconfig/node20": "^20.1.4",
     "@types/express": "^5.0.0",
     "@types/node": "^20.17.30",
     "eslint": "^9.20.1",
+    "graphql-codegen": "^0.4.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.24.1"
