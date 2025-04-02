@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from "@jest/globals";
 import { LocalDatabase } from "../utils/local-db.js";
-import { sql } from "drizzle-orm";
+import { sql } from "drizzle-orm"
 
 describe('Database Setup', () => {
   const connectionString = process.env.TEST_DB_URL || 'postgres://postgres:postgres@localhost:5432/wkt_postgraphile_test';

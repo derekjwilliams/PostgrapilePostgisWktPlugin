@@ -2,7 +2,7 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  testMatch: ['**/tests/end-to-end/**/*.test.ts'],
+  testMatch: ['**/tests/e2e/**/*.test.ts'],
   transform: {
     '^.+\\.(t|j)sx?$': 'babel-jest'
   },

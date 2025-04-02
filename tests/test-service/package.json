@@ -7,10 +7,20 @@
     "postinstall": "npm run build",
     "link-package": "npm link ../path/to/postgraphile-postgis-wkt",
     "unlink-package": "npm unlink postgraphile-postgis-wkt",
-    "build": "tsc",
+    "oldbuild": "tsc",
+
+    "pretest:e2e": "npm run start:test-server",
+    "test:e2e": "vitest run -r tests/e2e",
+    "posttest:e2e": "npm run stop:test-server",
+    "start:test-server": "tsx src/server.ts & echo $! > .test-server.pid",
+    "stop:test-server": "kill $(cat .test-server.pid) && rm .test-server.pid",
+    "test:e2e:ci": "concurrently -k -s first -n 'SERVER,TESTS' -c 'bgBlue.bold,bgGreen.bold' \"npm run start:test-server\" \"wait-on tcp:3000 && npm run test:e2e\"",
+
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:ui": "vitest --ui",
     "start": "tsx src/server.ts",
-    "dev": "tsx watch src/server.ts",
-    "old:start": "GRAPHILE_ENV=development node --loader=ts-node/esm src/server.ts"
+    "dev": "tsx watch src/server.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

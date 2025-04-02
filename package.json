@@ -19,10 +19,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "npm run build",
-    "test": "jest tests/end-to-end -t 'Mutation Tests' --verbose",
-    "test:setup": "npm run build && npm --prefix tests/test-service install",
-    "test:clean": "psql -U postgres -c 'DROP DATABASE IF EXISTS wkt_postgraphile_test'"
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "postgraphile": "^5.0.0-beta.40"
