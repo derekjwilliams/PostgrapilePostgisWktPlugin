@@ -18,7 +18,7 @@ const preset: GraphileConfig.Preset = {
     }),
   ],
   grafast: {
-    explain: true,
+    explain: false,
   },
 }
 
